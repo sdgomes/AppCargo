@@ -1,0 +1,26 @@
+.comments {
+    position: fixed;
+    padding: 1rem;
+    background-color: rgba($observation, 0.8);
+    width: 240px;
+    border-radius: 10px 0 0 10px;
+    z-index: 1;
+    @include absoluteAlign(calc(2rem + 100px), 0, unset, unset);
+    h5 {
+        text-transform: uppercase;
+        color: darken($orange, 5%);
+        font-weight: 800;
+    }
+    .contact {
+        width: 165px;
+        transform: translate(-110px, 65px);
+        @media screen and (max-width: $large) {
+            transform: translate(25px, 65px);
+        }
+    }
+    p{
+        margin-bottom: 2rem;
+        font-size: small;
+        color: #cecece;
+    }
+}

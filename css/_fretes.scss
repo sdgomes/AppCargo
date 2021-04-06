@@ -1,0 +1,120 @@
+.fretes {
+    .frete {
+        margin: 0 -0.5rem;
+        height: calc(100% - 60px);
+        overflow: hidden auto;
+        border-radius: 0.85rem;
+        label {
+            color: $sender;
+            margin: 0;
+        }
+        .validade {
+            &.vencida {
+                color: red;
+            }
+        }
+        &-list {
+            list-style: none;
+            width: 100%;
+            padding: 0 0.5rem;
+            height: 100%;
+            overflow: hidden auto;
+            border-radius: 0.85rem;
+            margin-bottom: 0;
+            @include grayscroll(#12281b);
+            li {
+                margin: 0 0 15px;
+                overflow: hidden;
+                border-radius: 0.85rem;
+                position: relative;
+            }
+        }
+        &-card {
+            width: 100%;
+            background: $card;
+            color: $blueButton;
+            min-height: 10px;
+            border-radius: 0.85rem;
+            font-size: 11.5px;
+            padding: 0.31rem;
+            transition: 0.5s ease-in-out;
+            position: relative;
+            z-index: 1;
+            &.slide {
+                transform: translateX(-110px);
+            }
+            span {
+                width: 100%;
+                display: block;
+            }
+            &-options {
+                font-size: 20px;
+                border: 0;
+                background: transparent;
+                padding: 0;
+                transform: translateY(-5px);
+                color: darken($orange, 3%);
+                filter: drop-shadow(0 1px 1px #797979);
+            }
+            .publicacao {
+                font-size: 9.5px;
+            }
+        }
+        &-place {
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            color: darken($secondary, 35%);
+            span {
+                width: fit-content;
+            }
+        }
+        &-options {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 90px;
+            height: 100%;
+            background: $card;
+            border-radius: 0.85rem;
+            button {
+                margin: auto;
+                background: transparent;
+                width: 85%;
+                height: 50%;
+                border: 0;
+                font-size: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-end;
+                justify-content: center;
+                small {
+                    font-size: 10px;
+                    width: 100%;
+                }
+                &:first-child {
+                    color: darken($sender, 25%);
+                    border-bottom: 0.5px solid #a5a5a5;
+                }
+                &:last-child {
+                    color: darken(red, 25%);
+                }
+            }
+        }
+    }
+
+    .produto {
+        font-size: 13px;
+        margin-bottom: 0.235rem;
+    }
+    .box-body {
+        &.fretes {
+            display: flex;
+            flex-wrap: wrap;
+            height: calc(100vh - (2 * 1.5rem));
+            @media screen and (max-width: $medium) {
+                height: calc(100vh - (2 * 80px));
+            }
+        }
+    }
+}

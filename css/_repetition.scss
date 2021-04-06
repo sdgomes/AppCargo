@@ -1,0 +1,46 @@
+@mixin nav-list($white: false, $belong: "") {
+    @if $white == true {
+        @each $name, $value in $navigation-list-white {
+            #{$belong}.li-#{$name} {
+                background-image: ($value);
+            }
+        }
+    } @else {
+        @each $name, $value in $navigation-list {
+            #{$belong}.li-#{$name} {
+                background-image: ($value);
+            }
+        }
+    }
+}
+
+@mixin absoluteAlign($top, $rigth, $bottom, $left) {
+    margin: auto;
+    top: $top;
+    right: $rigth;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin grayscroll($scroll) {
+    /* width */
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $scroll;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: darken($scroll, 20%);
+    }
+}

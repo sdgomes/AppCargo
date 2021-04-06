@@ -1,0 +1,37 @@
+// Single Variables
+$imagepath: "../images/";
+$x-small: 425px;
+$small: 719px;
+$medium: 991px;
+$large: 1199px;
+
+// Colors
+$observation: #2d483a;
+$box: #0e5831;
+$blueButton: #0d1730;
+$ligth-green: #bad4c6;
+$orange: #e1ac54;
+$secondary: #92a698;
+$naviagtion: #12281b;
+$green: #e0eae4;
+$message: #ffeda4;
+$gray: #f7f7f7;
+$sender: #3c5be6;
+$questionBlue: #394b9a;
+$card: #cec9c7;
+
+// Collections
+$navigation-list: (
+    "home": url(#{$imagepath}home.png),
+    "oferecer-frete": url(#{$imagepath}oferecer-frete.png),
+    "chat": url(#{$imagepath}chat.png),
+    "fretes": url(#{$imagepath}fretes.png),
+    "senha": url(#{$imagepath}senha.png),
+);
+$navigation-list-white: (
+    "home": url(#{$imagepath}home-white.png),
+    "oferecer-frete": url(#{$imagepath}oferecer-frete-white.png),
+    "chat": url(#{$imagepath}chat-white.png),
+    "fretes": url(#{$imagepath}fretes-white.png),
+    "senha": url(#{$imagepath}senha-white.png),
+);

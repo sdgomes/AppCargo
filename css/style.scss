@@ -1,0 +1,495 @@
+/*
+*
+* Import Area
+*/
+
+@import "./variables";
+@import "./repetition";
+
+/*
+*   Navigation
+*/
+@import "./navigation";
+/*
+*   Main Containt
+*/
+body {
+    overflow-y: hidden;
+    @media screen and (max-width: $medium) {
+        overflow-y: unset;
+    }
+    color: white;
+}
+
+a {
+    color: white;
+    &:hover {
+        text-decoration: unset;
+        color: #dadada;
+    }
+}
+
+.text {
+    &-primary {
+        color: $orange !important;
+    }
+    &-italic {
+        font-style: italic;
+    }
+    &-normal {
+        font-style: normal;
+    }
+}
+.btn {
+    padding: 0.253rem 0.75rem;
+    border-radius: 15px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+    font-weight: 700;
+    border: 0;
+    font-size: smaller;
+    &-primary {
+        color: #1b1b1b;
+        background-color: $orange;
+        &:hover {
+            color: darken(#1b1b1b, 5%);
+            background-color: darken($orange, 5%);
+        }
+    }
+    &-secondary {
+        color: #1b1b1b;
+        background-color: $secondary;
+        &:hover {
+            color: darken(#1b1b1b, 5%);
+            background-color: darken($secondary, 5%);
+        }
+    }
+    &-back-chat {
+        height: 40px;
+        margin: auto 0;
+        color: $orange;
+        background: transparent;
+        border: 0;
+        width: 48px;
+        &:focus {
+            outline: none;
+        }
+    }
+    &-ellipsis {
+        font-size: x-large;
+        color: $orange;
+        background: transparent;
+        border: 0;
+    }
+}
+.containt {
+    width: calc(100% - 290px + 40px);
+    @media screen and (max-width: $small) {
+        width: calc(100% - 125px + 40px);
+    }
+    @media screen and (max-width: $x-small) {
+        width: 100%;
+        border-radius: 0 0 25px 25px;
+        height: calc(100% - 65px);
+        position: absolute;
+        box-shadow: unset;
+    }
+    height: 100vh;
+    border-radius: 30px 0 0 30px;
+    z-index: 1;
+    position: relative;
+    margin-left: auto;
+    box-shadow: -10px 0.5rem 1.25rem rgba(#000000, 0.55);
+    background: linear-gradient(90deg, rgba($ligth-green, 0.15), rgba($ligth-green, 0.15)),
+        url(#{$imagepath}mapa-brasil.jpg);
+    background-size: cover;
+    .tooffer {
+        position: fixed;
+        padding: 1rem;
+        z-index: 1;
+        background: rgba($observation, 0.8);
+        width: 180px;
+        border-radius: 10px 0 0 10px;
+        @include absoluteAlign(1rem, 0, unset, unset);
+
+        i {
+            color: $orange;
+            top: 3px;
+            left: 1.52rem;
+            font-size: larger;
+            position: relative;
+            transition: 0.4s ease;
+        }
+        &:hover i {
+            left: 2rem;
+        }
+    }
+}
+
+.box {
+    max-width: 450px;
+    padding-left: 0.325rem;
+    padding-right: 0.325rem;
+    max-height: 100vh;
+    overflow-y: auto;
+    margin-left: 1.5rem;
+    padding-top: 1.5rem;
+    &-body {
+        background-color: $box;
+        position: relative;
+        border-radius: 0.85rem;
+        padding: 0.5rem;
+        margin-bottom: 0.875rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+        @media screen and (max-width: $small) {
+            margin-bottom: 2rem;
+        }
+        &-form {
+            height: 365px;
+        }
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &-profile {
+        width: 40px;
+        border-radius: 50pc;
+        overflow: hidden;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.18);
+    }
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.whatsappbutton {
+    font-size: small;
+    position: relative;
+    margin: 1px 8px;
+    display: block;
+    .fa {
+        &-whatsapp {
+            position: absolute;
+            font-size: large;
+            left: 93%;
+        }
+        &-long-arrow-right {
+            transition: 0.4s ease;
+            color: $orange;
+            transform: scale(1.8) translate(11px, 2px);
+        }
+    }
+    &:hover {
+        .fa {
+            &-long-arrow-right {
+                transform: scale(1.8) translate(18px, 2px);
+            }
+        }
+    }
+}
+
+.form-group {
+    width: 65px;
+    label {
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+        font-size: 90%;
+        &.small {
+            font-size: 80%;
+        }
+    }
+    select,
+    input[type="text"],
+    input[type="date"],
+    input[type="password"],
+    textarea {
+        background-color: white;
+        width: 100%;
+        border: 0;
+        height: 25px;
+        border-radius: 0.5rem;
+        font-size: smaller;
+        &::placeholder {
+            color: gray;
+            font-style: italic;
+            padding-left: 0.5rem;
+        }
+        @media screen and (max-width: $medium) {
+            height: 32px;
+        }
+    }
+    textarea {
+        height: 87px;
+        margin-top: 1rem;
+        resize: none;
+    }
+    &-large {
+        width: 215px;
+    }
+    &-medium {
+        width: 120px;
+    }
+    &-g {
+        display: flex;
+        input[type="text"],
+        input[type="date"],
+        input[type="password"],
+        select {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $blueButton;
+        background: white;
+        width: 25px;
+        height: 25px;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        padding-right: 8px;
+        @media screen and (max-width: $medium) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+.change-pass {
+    position: relative;
+
+    label {
+        font-size: 12px;
+        @media screen and (max-width: $x-small) {
+            font-size: 15px;
+        }
+    }
+    button {
+        font-size: 12px;
+        font-weight: 600;
+        &.times {
+            position: absolute;
+            z-index: 1;
+            border-radius: 50pc;
+            border: 0;
+            top: -6px;
+            right: 13px;
+            width: 20px;
+            color: white;
+            background-color: $orange;
+        }
+    }
+}
+#banner-stand {
+    .times,
+    form,
+    .action-area.pass {
+        @media screen and (max-width: $small) {
+            display: none !important;
+        }
+    }
+}
+.header-buttons {
+    max-width: 450px;
+    margin: 1.5rem auto;
+    display: flex;
+    position: fixed;
+    padding-left: 0.325rem;
+    padding-right: 0.325rem;
+    @media screen and (max-width: $medium) {
+        position: relative;
+    }
+    @media screen and (max-width: $x-small) {
+        flex-wrap: wrap-reverse;
+    }
+}
+#password {
+    > div {
+        width: 275px;
+        height: 285px;
+        position: fixed;
+        z-index: 1000;
+        display: none;
+        @include absoluteAlign(0, 0, 0, 0);
+        @media screen and (max-width: $small) {
+            display: block;
+        }
+        .banner {
+            height: 285px;
+        }
+        .times {
+            @media screen and (max-width: $x-small) {
+                top: -20px;
+
+                right: 0;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+.push {
+    height: 45px;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    @media screen and (max-width: $x-small) {
+        width: 100%;
+        opacity: 0;
+        height: 3px;
+    }
+}
+/*
+*   Other Structures
+*/
+@import "./home";
+@import "./oferecer_frete";
+@import "./conversas";
+@import "./fretes";
+
+#mask {
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($green, 0.5);
+    position: fixed;
+    backdrop-filter: blur(2px);
+    @media screen and (min-width: $small) {
+        display: none !important;
+    }
+}
+.conversas,
+.oferecer-frete,
+.fretes {
+    .comments {
+        z-index: 1000;
+        @media screen and (max-width: $medium) {
+            height: max-content;
+            border-radius: 10px;
+            background-color: rgba($observation, 0.95);
+            @include absoluteAlign(0, 0, 0, 0);
+        }
+        @media screen and (min-width: $small) {
+            display: none;
+        }
+    }
+}
+
+.cotacao {
+    @media screen and (max-width: $medium) {
+        .tooffer {
+            position: relative;
+            width: 100%;
+            max-width: 430px;
+            border-radius: 10px;
+            @include absoluteAlign(unset, unset, unset, unset);
+            margin: auto auto 0.5rem;
+        }
+    }
+}
+.observations-small {
+    display: none;
+    margin-left: auto;
+    font-size: 40px;
+    button {
+        background: $questionBlue;
+        border: 0;
+        color: white;
+        border-radius: 0.85rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+    }
+    @media screen and (max-width: $small) {
+        display: flex;
+    }
+}
+@media screen and (max-width: $medium) {
+    .box {
+        margin: auto;
+        max-height: unset;
+        overflow-y: auto;
+        padding-top: unset;
+    }
+    .containt {
+        overflow: hidden auto;
+        .tooffer {
+            @include absoluteAlign(unset, unset, unset, unset);
+            position: relative;
+            border-radius: 10px;
+        }
+    }
+
+    .oferecer-frete,
+    .conversas,
+    .fretes {
+        .contact {
+            width: 205px;
+            margin-left: auto;
+            .box-body {
+                margin: 0;
+                height: 80px;
+            }
+        }
+
+        .tooffer {
+            margin: unset;
+            width: 205px;
+        }
+    }
+}
+@media screen and (max-width: $small) {
+    .oferecer-frete,
+    .fretes {
+        .contact {
+            width: 160px;
+            margin-left: auto;
+            .box-body {
+                margin: 0;
+                height: 80px;
+            }
+        }
+
+        .tooffer {
+            margin: unset;
+            width: 195px;
+        }
+    }
+}
+@media screen and (max-width: $x-small) {
+    .conversas {
+        .contact {
+            width: 100%;
+            .box-body {
+                margin: 0;
+                height: unset;
+            }
+        }
+
+        .tooffer {
+            width: 100%;
+            margin-top: 0.51rem;
+        }
+    }
+    .oferecer-frete,
+    .fretes {
+        .contact {
+            width: 83%;
+            margin-left: 0;
+            .box-body {
+                height: unset;
+            }
+        }
+        .tooffer {
+            width: 100%;
+            margin-top: 0.51rem;
+        }
+        .observations-small {
+            font-size: 35px;
+            width: 17%;
+            justify-content: flex-end;
+            button {
+                padding: 0 0.5rem;
+            }
+        }
+    }
+}
